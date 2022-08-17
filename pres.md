@@ -5,7 +5,26 @@
 -> Jon's Favorite Commmand-Line Tips and Tricks <-
 ==================================================
 
+-----------------------------------------------------
+
+-> Disable terminal beep <-
+Disabling terminal beep
+=======================
+
+The details of how to do this will vary with distro and terminal program...but
+editing the /etc/inputrc to set bell-stype to none
+
+set bell-style none
+
+
+-----------------------------------------------------
+
+
+
 -> Navigation <-
+Navigation
+----------
+
 Navigation (assuming bash defults, which is vi controls)
 
 | Tab                | autocomplete             |
