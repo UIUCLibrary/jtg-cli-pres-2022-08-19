@@ -1,5 +1,22 @@
 # Jon's Favorite Command-Line Tips and Tricks
 
-This is a hastly put together presetnation for a Mind Meld presentation to Library IT. Goal is a 20 minute presentation (at most) talking about some of my favorite tips and tricks.
+This is an informal presentation for a Mind Meld session in Library IT. Goal is a 20 minute presentation (at most) talking about some of my favorite tips and tricks.
 
-Given the nature of the presetntation, I decided to experment with the mdp, markdown prestation, tool.
+Given the nature of the presentation, I decided to experiment with the mdp, markdown presentation, tool.
+
+
+So, to run the presentation in this directory, do 
+
+`mdp pres.md`
+
+Controls:
+
+h, j, k, l, Arrow keys, Space, Enter, Backspace, Page Up, Page Down - next/previous slide
+Home, g - go to first slide
+End, G - go to last slide
+1-9 - go to slide n
+r - reload input file
+q - exit
+
+
+Slide title unicode characters are REVERSE CHECKER BOARD (0x1F67F)  and CHECKER BOARD (0x1F67E)
