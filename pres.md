@@ -77,7 +77,7 @@ Some programs will also have annoying sounds. Google can help too.
 kids seem to like it these days
 
 You might see older resources talk about `apropos`, which searches descriptions 
-but I'd only recommend that in cases you don't have net access
+but I'd only recommend it in cases you don't have net access
 
 ----------------------------------------------------------
 
@@ -116,33 +116,80 @@ but I'd only recommend that in cases you don't have net access
 🙿  Previous commands & History
 ===========================
 
-Pipes and Redirects
--------------------
+
+| _up arrow_     | previous command         |
+| _down arrow_   | next command             |
+| _control-r_    | will let you start to search history by typing |
+| _control-p_    | pastes last command into the terminal, but doesn't execute |
+
+
+`history` command will show history
+
+Can rerun a command via `!n` where n is the line number listed in the history command.
+
+"Print" to terminal via `!n:p` 
+ 
+## tip! Clean up history
+
+Had a comamnd you don't want hanging around in 
+history? use `history -d n` to delete that entry
+
+-----------------------------------------
+
+🙿  Pipes and Redirects - basics
+================================
 
 ##  | (pipe)
 sends output to another command, for example
-`date | rev` leads to "2202 TDC 25:91:51 81 guA uhT"  
+`date | rev` leads to "2202 TDC 25:91:51 81 guA uhT"
 
 ## > (greater than)
-`./outputs.sh > /tmp/example.txt`   
-writes stdout to file, clobbering file that exists                             |
+`date > /tmp/example.txt` 
+writes stdout to file, overwriting the file if it already  exists . 
+Try doing the above command twice several times and then 
+doing `cat /tmp/example.txt`. You should see only one datetime stamp.
 
 ## >> (double greater than)
-`./outputs.sh >> /tmp/examples.txt`
-appends stdout to file                                                         |
+`date >> /tmp/examples.txt`
+appends stdout to file.                                                         |
 
-## >& (greater than - ampersand)
-`./outputs.sh > /tmp/example_all_lines.txt 2>&1`  writes both stdout and stderr to file                                          |
+Do this a few times, and then check with 
+`cat /tmp/example.txt`. You should see several 
+timestamps
 
 ## `tee` 
- `./outputs.sh | tee /tmp/tee_example.txt` 
+ `date | tee /tmp/example.txt` 
 
-## tip!
+tee is a command that sends out to the
+terminal and to a file. It will overwrite by default,
+but if you do `tee -a` it'll append
+
+
+
+---------------------------------------------
+
+🙿  Pipes and Redirect - stdout and stderr
+==========================================
+
+A command actualy has two "channels" or "streams", 
+stdout and stderr. By default, both of these go to 
+terminal and occasionally can make things confusing.
+
+## >& (greater than - ampersand) - merge the streams 
+
+`./outputs.sh > /tmp/example_all_lines.txt 2>&1` 
+
+Sends stderr as well as stdout to */tmp/example_all_lines.txt*.
+Othewrise warnings and errors would only show on the terminal
+
+## tip
 
 You can also send "stdout" and "stderr" into different places, including the
 void known as "/dev/null"
 
 `./outputs.sh 2> /dev/null` 
+
+That will send "stdout" to terminal and stderr to the "void"
 
 --------------------------------------------------
 
@@ -163,12 +210,15 @@ So `ls \*txt` will list all the text file in the directory.
   `less` is a "pager" program for reading files, usually now the default 
    on most system. (less replaces more, an old favorite linux joke)
 
+`less -n` will include line numbers
 
-Useful keyboard shortcuts
+
+## less - Useful keyboard shortcuts
 
 | _g_ | go to the start |
 | _G_ | go to the end   |
-| _/_ | search from here to end |
+| _/search phrase_ | search current line to end, just use _/_ to search for next occurance |
+| :gg | go to line |
 
 ## head & tail
 
@@ -176,7 +226,9 @@ Useful keyboard shortcuts
   `tail -n x`  - shows the last x lines of a file
   `tail -n +1` - show all lines of a file after the 
                   first line, useful for csv files w/ headers
-                  and content on top
+                  and content on top, aka `tail -n +1 star_trek.tsv`
+
+
 
 ------------------------------------------------------------------
 

@@ -24,3 +24,6 @@ Slide title unicode characters are REVERSE CHECKER BOARD (0x1F67F)  and CHECKER 
 There's some shell scripts I'm using for examples, you might need to make them executable if you're 
 following along:
 `chmod u+x *sh`
+
+Thanks to Alex Dryden for the "gg" instruction in less and Joe Troy for the suggestion to add how to delete from history to slides, as well as everyone who camea nd asked questions!
+
