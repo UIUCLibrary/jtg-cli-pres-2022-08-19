@@ -126,7 +126,7 @@ void known as "/dev/null"
 --------------------------------------------------
 
 🙿  grep
-====
+========
 
 search lines of files or from pipe
 
@@ -154,29 +154,17 @@ Example usage:
 
 --------------------------------------------------
 
-tee
-===
-
-Have your cake and eat it too
-
-`some command | tee -a my_output_file.txt`
-
-Will show output to both the terminal and put the contents to output file. -a appends instead of replacing.
-
-----------------------------------------------------
-
-Shell Expansion/Globbing
-------------------------
+🙿  Shell Expansion/Globbing
+============================
 
 Asterisk (*) will match any characters 
 
-So 
-
-`ls *txt` will list all the text file in the directory.
+So `ls *txt` will list all the text file in the directory.
 
 -----------------------------------------------------------------
 
--> alias <-
+🙿  alias
+=========
 
 Stick in bottom of .bashrc/.bash_profile (depends on linx distro exactly.
 
@@ -187,15 +175,18 @@ alias jump-biling="ssh lib-feed-billing@batch-centos7.library.illinois.edu"
 
 Remember to `source ~/.bashrc` afterwards!
 
+--------------------------------------------------------
 
--> screen <-
+🙿  screen
+==========
 
 Keep a session going on a remote server, even if 
 connection drops.
 
 --------------------------------------------------
 
--> xclip <-
+🙿  xclip
+=========
 
 Useful for taking command line input and putting it direction into
 
@@ -211,27 +202,37 @@ xclip can also take in a text file
 
 --------------------------------------------------
 
--> find - cumbersome, but useful <-
+🙿  find - cumbersome, but useful 
+=================================
 
 --------------------------------------------------
 
--> qrencode <-
+🙿  qrencode
+============
 
 
-![qr barcode](library.png)
+`qrencode 'some_text_url_is_handy' -o filename.png`
+
+
+--------------------------------------------------
+
+🙿  cut and paste 
+=================
+
+Rearrange tabluar data via `cut` and `paste`
 
 
 --------------------------------------------------
 
+🙿  sshfs
+=========
 
--> cut and paste <-
+Mount remote directories to local file system via ssh
+
 
 --------------------------------------------------
--> sshfs <-
-
-
---------------------------------------------------
--> tip - remember ssh can execute commands <-
+🙿  remember ssh can execute commands 
+======================================
 
 ssh server_conn_string "comamnd"
 
@@ -239,7 +240,9 @@ useful for pairing with commands like xclip
 
 
 --------------------------------------------------
-# dig -x
+
+🙿   dig -x
+============
 
 reverse lookup by ip address
 
@@ -254,8 +257,8 @@ reverse lookup by ip address
 
 --------------------------------------------------
 
-Unicode Tools
-=============
+🙿  Unicode Tools
+=================
 
 Emacs - has nice _Alt-x_, 'insert-char' and _Alt-x_, 'describe-char'
 
@@ -268,7 +271,10 @@ Enter in the unicode code point. Use only lower-case letters for the alpha chara
 
 
 --------------------------------------------------
--> For Fun <-
-festival - comamnd line line tool for text to speech
+
+🙿  For Fun
+============
+
+espeak - comamnd line line tool for text to speech
 
 
