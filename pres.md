@@ -1,5 +1,5 @@
 %title: Jon's Favorite Command-Line Tips and Tricks
-%author: jtgorman
+%author: jtgorman@illinois.edu
 %date: 2022-08-17
 
 🙿  Jon's Favorite Command-Line Tips and Tricks  🙾
@@ -7,7 +7,7 @@
 
 In this case - comamnd-line means bash w/ mostly defaults ;)
 
-Slideshow is being run via `wpm pres.md`, which makes slides
+Slideshow is being run via `mdp pres.md`, which makes slides
 out of markdown!
 
 Git repo for pres: https://github.com/UIUCLibrary/jtg-cli-pres-2022-08-19
@@ -22,22 +22,6 @@ _keyboard press_
 Know a better tool? Let me know as we go!
 
 -----------------------------------------------------
-
-🙿  Disabling terminal beep
-=======================
-
-The details of how to do this will vary with distro and terminal program...but
-editing the */etc/inputrc* to set bell-stype to none
-
-`set bell-style none`
-
-Google is your friend here
-
-Some programs will also have annoying sounds. Google can help too.
-
-
-
----------------------------------------------------
 
 🙿  Resources
 =========
@@ -65,12 +49,27 @@ Some programs will also have annoying sounds. Google can help too.
 -----------------------------------------------------
 
 
+
+🙿  Disabling terminal beep
+=======================
+
+The details of how to do this will vary with distro and terminal program...but
+editing the */etc/inputrc* to set bell-stype to none
+
+`set bell-style none`
+
+Google is your friend here
+
+Some programs will also have annoying sounds. Google can help too.
+
+--------------------------------------------
+
 🙿  Getting help
 ================
 
-    * `man command`  - manual page
-    * `info command` - info pages
-    * "World Wide Web" - kids seem to like it these days
+  * `man command`  - manual page
+  * `info command` - info pages
+  * "World Wide Web" - kids seem to like it these days
 
 You might see older resources talk about `apropos`, which searches descriptions 
 but I'd only recommend that in cases you don't have net access
@@ -115,7 +114,7 @@ Pipes and Redirects
     * |    - send output to another command, `date | rev` will print something like "2202 TDC 25:91:51 81 guA uhT"
     * >    - `foo > some_file.txt`   writes stdout to file, clobbering file that exists 
     * >>   - `foo >> some_file.txt`  appends stdout to file
-    * &>   - `foo > some_file 2>&1`  writes both stdout and stderr to file
+    * >&   - `foo > some_file 2>&1`  writes both stdout and stderr to file
     * `tee` -` some command 
 
 You can also send "stdout" and "stderr" into different places, including the
@@ -124,6 +123,24 @@ void known as "/dev/null"
 `foo > some_file 2> /dev/null` 
 
 --------------------------------------------------
+
+🙿  Shell Expansion/Globbing
+============================
+
+Asterisk (*) will match any characters 
+
+So `ls *txt` will list all the text file in the directory.
+
+-----------------------------------------------------------------
+
+
+🙿  head & tail
+
+`head -n x`  - shows the first x lines of a file
+`tail -n x`  - shows the last x lines of a file
+`tail -n +5`  - show all lines of a file after the first five
+
+------------------------------------------------------------------
 
 🙿  grep
 ========
@@ -149,19 +166,16 @@ Example usage:
 ## -o
   
   Only return match, not the whole line it occurs in
+  
+Actual use of grep recently - trying to remember what AD account I used in ldapsearch
+`history | grep -oP "CN=[^']*'" | sort | uniq`
 
-
+CN=lib-adinfo-ad-lookup,OU=Service Accounts,OU=Library,OU=Urbana,DC=ad,DC=uillinois,DC=edu'
+CN=,lib-adinfo-lookup,OU=Service Accounts,,OU=Library,OU=Urbana,DC=ad,DC=uillinois,DC=edu'
+CN=lib-adinfo-lookup,OU=Service Accounts,OU=Library,OU=Urbana,DC=ad,DC=uillinois,DC=edu'
+CN=LibADLookup Service Account,OU=SU Accounts,OU=Library,OU=Urbana,DC=ad,DC=uillinois,DC=edu'
 
 --------------------------------------------------
-
-🙿  Shell Expansion/Globbing
-============================
-
-Asterisk (*) will match any characters 
-
-So `ls *txt` will list all the text file in the directory.
-
------------------------------------------------------------------
 
 🙿  alias
 =========
@@ -268,13 +282,42 @@ In Ubuntu terminal - _left ctl_ + _left shift_ + _u_
 
 Enter in the unicode code point. Use only lower-case letters for the alpha characters.
 
+------------------------------------------------------------
+
+
+🙿  watch
+==========
+
+`watch -n x command`
+
+Rerun the command every x seconds (w/o flag, think it's 2 seconds by default)
 
 
 --------------------------------------------------
 
-🙿  For Fun
-============
 
-espeak - comamnd line line tool for text to speech
+🙿  wget & curl
 
+I tend to use `wget` to fetch files that I want on the file system
+
+`wget https://www.gutenberg.org/files/23042/23042-0.txt`
+
+It's also handy for mirroring websites, or slurping down parts of a website,
+but you'll probaby have to experiment a bit with the flags
+to get what you want.
+
+`wget --mirror --convert-links --adjust-extension --page-requisites --level 1  https://www.gutenberg.org/ebooks/23042`
+
+`curl` is a useful tool for checking headers, getting content, but it's a bit more complicated
+
+to do the above in curl (since it's a text file)
+
+`curl https://www.gutenberg.org/files/23042/23042-0.txt > tempest.txt`
+
+Can be useful in some situations, like debugging a web server on the machine itself
+
+`curl -D - https://www.gutenberg.org/files/23042/23042-0.txt` | less
+
+Will dump the headers actually being returned at the top of the file and the body
+of the reponse below it.
 
