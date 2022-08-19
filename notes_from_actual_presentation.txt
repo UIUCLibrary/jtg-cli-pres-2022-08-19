@@ -1,0 +1,16 @@
+Covered basic stuff, then jumped around a bit.
+
+Will do a part 2 that has some more advanced stuff,
+can recommend people do some of the basics.
+
+Might split slide up a bit.
+
+
+Popular topics/questions:
+
+Navigation in less
+history and history manipulation (I think)
+grepping / finding of files
+
+Will try to follow up with some individuals about
+what they might like to see in part 2.
