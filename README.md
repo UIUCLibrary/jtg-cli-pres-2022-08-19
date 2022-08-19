@@ -20,3 +20,7 @@ q - exit
 
 
 Slide title unicode characters are REVERSE CHECKER BOARD (0x1F67F)  and CHECKER BOARD (0x1F67E)
+
+There's some shell scripts I'm using for examples, you might need to make them executable if you're 
+following along:
+`chmod u+x *sh`
