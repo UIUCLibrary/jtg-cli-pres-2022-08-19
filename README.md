@@ -1,5 +1,12 @@
 # Jon's Favorite Command-Line Tips and Tricks
 
+I've forked this over to https://github.com/UIUCLibrary/bash-cli-tips-and-tricks. I'm planning on keeping that one up-to-date and let this one reflect the presentation I gave on 2022-18-19 since there were some links to that. 
+
+
+
+
+
+
 This is an informal presentation for a Mind Meld session in Library IT. Goal is a 20 minute presentation (at most) talking about some of my favorite tips and tricks.
 
 Given the nature of the presentation, I decided to experiment with the mdp, markdown presentation, tool.
